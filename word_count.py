@@ -1,5 +1,23 @@
 import re
 
+
+# mahn_branch
+from collections import Counter
+
+def count_words(sentence: str):
+    sentence = sentence.lower().replace("_", "-")
+    
+    words = re.findall(r"\b\w+(?:'\w+)?\b", sentence)
+    
+    word_count = Counter(words)
+    
+    return dict(word_count)
+
+print(count_words(sentence=input("Enter sentence: ")))
+
+#--------------------------------------------------------
+
+# wai_solu
 """
 input: "one fish two fish red fish blue fish"),
 output: {"one": 1, "fish": 4, "two": 1, "red": 1, "blue": 1}
